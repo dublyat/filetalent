@@ -27,7 +27,7 @@ automsg = ["wanna kolsegs byy? @babyeta",
 "-1 co angeee sinii 🤪 @babyeta",
 "-1 co yang mau ak goyangin 😋 @babyeta",
 "-1 co hypeersxx sinii 😛 @babyeta",
-"-1 co vcsangeee 🥵 @babyeta"
+"-1 co vcsangeee 🥵 @babyeta",
 "crtin foto ak dong byy @babyeta",
 "call sampe crot yuu @babyeta",
 "vcsange yuu bareng akuu @babyeta",

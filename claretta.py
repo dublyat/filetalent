@@ -83,9 +83,9 @@ async def main():
 
     print("sᴛᴀʀᴛɪɴɢ ᴄʟᴀʀᴇᴛᴛᴀ")
 
-    asyncio.create_task(send_random_messages2())
-
     asyncio.create_task(send_random_messages())
+
+    asyncio.create_task(send_random_messages2())
       
     await client.run_until_disconnected()
 

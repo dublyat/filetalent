@@ -55,7 +55,6 @@ async def main():
 
 
     asyncio.create_task(send_random_messages())
-    client.add_event_handler(my_event_handler, events.NewMessage)
     await client.run_until_disconnected()
 
 asyncio.run(main())

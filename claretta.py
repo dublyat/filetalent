@@ -55,9 +55,9 @@ client = TelegramClient('claretta', api_id, api_hash)
 
 async def send_meta_messages():
       while True:
-        for group_id in group_ids:
+        for group_id in group_meta:
             message_auto = random.choice(automsg)
-            message = await client.send_message(group_meta, message_auto)        
+            message = await client.send_message(group_id, message_auto)        
             await asyncio.sleep(random.randint(90,120))
 
 async def send_random_messages():

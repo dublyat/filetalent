@@ -13,7 +13,7 @@ api_id = '28119255'
 api_hash = '337f330b7ab0c169c6296bc80338c6fd'
 phone = '+6283185102534'
 
-group_meta = [-1001707678506, -1001510261210]  
+group_metas = [-1001707678506, -1001510261210]  
 group_ids = [-1001634555044, -1002422141340]  
 
 
@@ -55,13 +55,13 @@ client = TelegramClient('claretta', api_id, api_hash)
 
 async def send_meta_messages():
       while True:
-        for group_id in group_meta:
+        for group_meta in group_metas:
             message_auto = random.choice(automsg)
-            message = await client.send_message(group_id, message_auto)        
+            message = await client.send_message(group_meta, message_auto)        
             await asyncio.sleep(random.randint(90,120))
 
 async def send_random_messages():
-            while True:
+      while True:
         for group_id in group_ids:
             message_auto = random.choice(automsg)
             message = await client.send_message(group_id, message_auto)        

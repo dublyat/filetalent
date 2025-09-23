@@ -61,7 +61,7 @@ async def send_random_messages():
             message = await client.send_message(group_id, message_auto)        
             await asyncio.sleep(random.randint(90,180))
 
-async def send_meta_messages():
+async def send_random_messages2():
       while True:
         for group_meta in group_metas:
             message_auto = random.choice(automsg)
@@ -83,7 +83,7 @@ async def main():
 
     print("sᴛᴀʀᴛɪɴɢ ᴄʟᴀʀᴇᴛᴛᴀ")
 
-    asyncio.create_task(send_meta_messages())
+    asyncio.create_task(send_random_messages2())
 
     asyncio.create_task(send_random_messages())
       

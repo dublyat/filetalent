@@ -9,9 +9,9 @@ from telethon.errors import SessionPasswordNeededError
 
 ###############INPUT PART###############
 
-api_id = '28119255'
-api_hash = '337f330b7ab0c169c6296bc80338c6fd'
-phone = '+6283185102534'
+api_id = '22033973'
+api_hash = '43da19a7b0f4617f4937ff047d820f9d'
+phone = '+6283185102531'
 
 group_metas = [-1001707678506, -1001510261210]  
 

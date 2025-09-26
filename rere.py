@@ -59,14 +59,14 @@ async def send_random_messages():
         for group_id in group_ids:
             message_auto = random.choice(automsg)
             message = await client.send_message(group_id, message_auto)        
-            await asyncio.sleep(random.randint(300,600))
+            await asyncio.sleep(random.randint(600,1200))
 
 async def send_random_messages2():
       while True:
         for group_meta in group_metas:
             message_auto = random.choice(automsg)
             message = await client.send_message(group_meta, message_auto)        
-            await asyncio.sleep(random.randint(240,360))
+            await asyncio.sleep(random.randint(360,600))
 
 
 async def main():

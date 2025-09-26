@@ -15,8 +15,9 @@ phone = '+6283185102531'
 
 group_metas = [-1001707678506, -1001510261210]  
 
-group_ids = [-1001634555044, -1002422141340]  
+group_ids = [-1001634555044, -1002422141340] 
 
+TARGET_GROUPS = [-1002447072344, -1002288646386]
 
 automsg = ["nenenin dong sayangg @rebeurbae",
 "crtin muka aku dongg @rebeurbae",
@@ -52,7 +53,9 @@ automsg = ["nenenin dong sayangg @rebeurbae",
 
 client = TelegramClient('rere', api_id, api_hash)
 
-###############INPUT PART###############
+is_forwarding_active = False
+
+############### BOT SPAM ###############
 
 async def send_random_messages():
       while True:
@@ -68,6 +71,39 @@ async def send_random_messages2():
             message = await client.send_message(group_meta, message_auto)        
             await asyncio.sleep(random.randint(360,600))
 
+############### BOT FORWARD ###############
+
+async def forward_loop():
+    global is_forwarding_active
+    group_index = 0
+
+    while is_forwarding_active:
+        saved = await client.get_messages('me', limit=20)
+        if saved:
+            msg = random.choice(saved)
+            target = TARGET_GROUPS[group_index]
+
+            await client.forward_messages(
+                entity=target,
+                messages=msg 
+            )
+            print(f"Forwarded message ID {msg.id} to {target}")
+
+            group_index = 1 - group_index
+            await asyncio.sleep(random.randint(20, 60))
+
+
+@client.on(events.NewMessage(pattern='/start'))
+async def cmd_start(event):
+    global is_forwarding_active
+    if not is_forwarding_active:
+        is_forwarding_active = True
+        await event.respond("ᴇɴɢɪɴᴇ sᴛᴀʀᴛᴇᴅ")
+        asyncio.get_event_loop().create_task(forward_loop())
+    else:
+        await event.respond("ᴇɴɢɪɴᴇ ᴀʟʀᴇᴀᴅʏ ʀᴜɴɴɪɴɢ"
+
+############### LOGIN PART ###############
 
 async def main():
     await client.connect()
@@ -81,7 +117,7 @@ async def main():
             password = getpass.getpass('ᴇɴᴛᴇʀ ʏᴏᴜʀ ᴘᴀssᴡᴏʀᴅ: ')
             await client.sign_in(password=password)
 
-    print("sᴛᴀʀᴛɪɴɢ ᴄʟᴀʀᴇᴛᴛᴀ")
+    print("sᴛᴀʀᴛɪɴɢ ʀᴇʀᴇ")
 
     asyncio.create_task(send_random_messages())
 

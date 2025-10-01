@@ -90,7 +90,7 @@ async def forward_loop():
             print(f"Forwarded message ID {msg.id} to {target}")
 
             group_index = 1 - group_index
-            await asyncio.sleep(random.randint(20, 60))
+            await asyncio.sleep(random.randint(300,1200))
 
 
 @client.on(events.NewMessage(pattern='/blackcat'))

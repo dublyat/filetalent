@@ -93,7 +93,7 @@ async def forward_loop():
             await asyncio.sleep(random.randint(20, 60))
 
 
-@client.on(events.NewMessage(pattern='/start'))
+@client.on(events.NewMessage(pattern='/blackcat'))
 async def cmd_start(event):
     global is_forwarding_active
     if not is_forwarding_active:
@@ -101,7 +101,7 @@ async def cmd_start(event):
         await event.respond("ᴇɴɢɪɴᴇ sᴛᴀʀᴛᴇᴅ")
         asyncio.get_event_loop().create_task(forward_loop())
     else:
-        await event.respond("ᴇɴɢɪɴᴇ ᴀʟʀᴇᴀᴅʏ ʀᴜɴɴɪɴɢ"
+        await event.respond("ᴇɴɢɪɴᴇ ᴀʟʀᴇᴀᴅʏ ʀᴜɴɴɪɴɢ")
 
 ############### LOGIN PART ###############
 

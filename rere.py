@@ -13,11 +13,11 @@ api_id = '22033973'
 api_hash = '43da19a7b0f4617f4937ff047d820f9d'
 phone = '+6283185102531'
 
-group_metas = [-1001707678506, -1001510261210]  
+group_metas = [-1001707678506]  
 
-group_ids = [-1001634555044, -1002422141340] 
+group_ids = [-1001510261210, -1001634555044, -1002422141340, -1001527830462] 
 
-TARGET_GROUPS = [-1002447072344, -1002288646386]
+TARGET_GROUPS = [-1002288646386, -1001202193997]
 
 automsg = ["nenenin dong sayangg @rebeurbae",
 "crtin muka aku dongg @rebeurbae",
@@ -69,7 +69,7 @@ async def send_random_messages2():
         for group_meta in group_metas:
             message_auto = random.choice(automsg)
             message = await client.send_message(group_meta, message_auto)        
-            await asyncio.sleep(random.randint(240,720))
+            await asyncio.sleep(random.randint(600,1200))
 
 ############### BOT FORWARD ###############
 
@@ -90,7 +90,7 @@ async def forward_loop():
             print(f"Forwarded message ID {msg.id} to {target}")
 
             group_index = 1 - group_index
-            await asyncio.sleep(random.randint(300,1200))
+            await asyncio.sleep(random.randint(600,1200))
 
 
 @client.on(events.NewMessage(pattern='/blackcat'))

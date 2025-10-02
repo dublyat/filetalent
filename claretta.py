@@ -70,7 +70,7 @@ async def send_random_messages2():
         for group_meta in group_metas:
             message_auto = random.choice(automsg)
             message = await client.send_message(group_meta, message_auto)        
-            await asyncio.sleep(random.randint(600,1200))
+            await asyncio.sleep(random.randint(600,900))
 
 ############### BOT FORWARD ###############
 

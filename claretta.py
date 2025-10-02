@@ -94,7 +94,7 @@ async def forward_loop():
             await asyncio.sleep(random.randint(600,1200))
 
 
-@client.on(events.NewMessage(pattern='/blackcat'))
+@client.on(events.NewMessage(pattern='/start_claretta'))
 async def cmd_start(event):
     global is_forwarding_active
     if not is_forwarding_active:
@@ -103,6 +103,15 @@ async def cmd_start(event):
         asyncio.get_event_loop().create_task(forward_loop())
     else:
         await event.respond("ᴇɴɢɪɴᴇ ᴀʟʀᴇᴀᴅʏ ʀᴜɴɴɪɴɢ")
+
+@client.on(events.NewMessage(pattern='/stop_claretta'))
+async def cmd_stop(event):
+    global is_forwarding_active
+    if is_forwarding_active:
+        is_forwarding_active = False
+        await event.respond("Forwarding stopped.")
+    else:
+        await event.respond("No forwarding process is running.")
 
 ############### LOGIN PART ###############
 

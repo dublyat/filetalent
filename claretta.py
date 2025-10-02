@@ -127,7 +127,7 @@ async def main():
             password = getpass.getpass('ᴇɴᴛᴇʀ ʏᴏᴜʀ ᴘᴀssᴡᴏʀᴅ: ')
             await client.sign_in(password=password)
 
-    print("sᴛᴀʀᴛɪɴɢ ʀᴇʀᴇ")
+    print("sᴛᴀʀᴛɪɴɢ ᴄʟᴀʀᴇᴛᴛᴀ")
 
     asyncio.create_task(send_random_messages())
 
